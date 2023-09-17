@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_green"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ProgressBar
+        android:id="@+id/progressbarSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:indeterminateTint="@color/base_yellow"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/titleFarmLinkProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/profileSettingsButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/baseline_edit_note_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/profileCard"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/card_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleFarmLinkProfile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/upperLine"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profilePictureCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+                app:layout_constraintTop_toBottomOf="@id/upperLine"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userProfilePictureView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/profile_foreground"
+                        android:src="@mipmap/profile_round"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/userEmailProfileView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Email"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="12sp"
+                        android:textColor="@color/gray"
+                        android:textAlignment="center"
+                        android:drawableStart="@drawable/baseline_email_24"
+                        android:drawablePadding="7.5dp"
+                        app:layout_constraintTop_toBottomOf="@id/userProfilePictureView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/userNameViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="10dp"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="17.5sp"
+                android:fontFamily="@font/poppins"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/upperLine"
+                app:layout_constraintStart_toEndOf="@id/profilePictureCard" />
+
+            <TextView
+                android:id="@+id/statusProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="[buyer-or-seller]"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/userNameViewProfile"
+                app:layout_constraintStart_toEndOf="@id/profilePictureCard" />
+
+            <View
+                android:id="@+id/underLine"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@+id/profilePictureCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <GridLayout
+                android:id="@+id/buttonGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/underLine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/orders"
+                    android:layout_height="100dp"
+                    android:layout_width="100dp"
+                    android:drawableTop="@drawable/package_orders"
+                    android:text="Orders"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button_bg"
+                    app:elevation="8dp"
+                    app:backgroundTint="@color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/forum"
+                    android:layout_height="100dp"
+                    android:layout_width="100dp"
+                    android:drawableTop="@drawable/baseline_people_outline_24"
+                    android:text="Forum"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button_bg"
+                    app:elevation="8dp"
+                    app:backgroundTint="@color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/notifications"
+                    android:layout_height="100dp"
+                    android:layout_width="100dp"
+                    android:drawableTop="@drawable/baseline_notifications_active_24"
+                    android:text="Alerts"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button_bg"
+                    app:elevation="8dp"
+                    app:backgroundTint="@color/white"/>
+
+            </GridLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addShippingAddressButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="add shipping address"
+                android:drawableStart="@drawable/baseline_location_on_24white"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/buttonGrid"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sellerRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="be a seller!"
+                android:drawableStart="@drawable/baseline_sell_24"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/addShippingAddressButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sellerProfileButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="seller profile"
+                android:drawableStart="@drawable/baseline_shopping_basket_24"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                android:visibility="invisible"
+                app:layout_constraintTop_toBottomOf="@id/addShippingAddressButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/reviewTermsAndC"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="@string/reviewterms"
+                android:fontFamily="@font/poppins"
+                android:drawableStart="@drawable/baseline_playlist_add_check_circle_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/logOutButton"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/logOutButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="75dp"
+                android:text="Log Out"
+                android:backgroundTint="@color/base_yellow"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/sellerRegister"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

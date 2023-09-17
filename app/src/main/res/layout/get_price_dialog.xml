@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp"
+    android:background="@drawable/card_radius"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Quantity"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/priceInitial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price per kilogram : "
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/dialogTitle"
+        app:layout_constraintStart_toStartOf="@id/quantityTextBox"/>
+
+    <TextView
+        android:id="@+id/priceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Php [price]"
+        android:textSize="14sp"
+        android:textColor="@color/base_yellow"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/dialogTitle"
+        app:layout_constraintStart_toEndOf="@id/priceInitial"/>
+
+    <TextView
+        android:id="@+id/totalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Total price: "
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/priceView"
+        app:layout_constraintStart_toStartOf="@id/quantityTextBox"/>
+
+    <TextView
+        android:id="@+id/totalView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Php [price]"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/priceView"
+        app:layout_constraintStart_toEndOf="@id/totalTitle"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/quantityTextBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/textbox_background"
+        android:fontFamily="@font/poppins"
+        android:hint="Enter kilo(s) you want to buy"
+        android:padding="7.5dp"
+        android:textSize="14sp"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalView"
+        tools:ignore="TouchTargetSizeCheck"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_design"
+        android:text="Cancel"
+        android:textColor="@color/base_green"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/quantityTextBox"
+        app:layout_constraintEnd_toStartOf="@id/proceedButton"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/proceedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_design"
+        android:backgroundTint="@color/base_green"
+        android:text="Proceed"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/quantityTextBox"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

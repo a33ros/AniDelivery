@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.mainmenufrags.CheckOutFragment"
+            android:background="@color/base_green">
+
+            <GridLayout
+                android:id="@+id/topBarCheckOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/backCheckOutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/baseline_arrow_left_24white"/>
+
+                <TextView
+                    android:id="@+id/titleCheckOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Check Out"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/poppins"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </GridLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/card_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topBarCheckOut"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/deliveryAddressCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginEnd="35dp"
+                            app:cardCornerRadius="10dp"
+                            android:background="@drawable/textbox_background"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/deliveryAddressTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Delivery Address"
+                                    android:textStyle="bold"
+                                    android:textSize="15.5sp"
+                                    android:drawablePadding="10dp"
+                                    android:drawableStart="@drawable/baseline_location_on_larger"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                                <TextView
+                                    android:id="@+id/deliveryFullName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Full Name"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toBottomOf="@id/deliveryAddressTitle"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@id/deliveryPhoneNumber"/>
+
+                                <TextView
+                                    android:id="@+id/deliveryPhoneNumber"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="(Phone Number)"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toBottomOf="@id/deliveryAddressTitle"
+                                    app:layout_constraintStart_toEndOf="@id/deliveryFullName"
+                                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                                <TextView
+                                    android:id="@+id/deliveryAddress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Street, Barangay City, Province,\nPostal Code"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toBottomOf="@id/deliveryFullName"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/checkOutProducts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            tools:listitem="@layout/check_out_cart_item"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@id/deliveryAddressCard"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/paymentOptionCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="35dp"
+                            app:cardCornerRadius="10dp"
+                            android:background="@drawable/textbox_background"
+                            app:layout_constraintTop_toBottomOf="@id/checkOutProducts"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/paymentOptionTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Payment Option"
+                                    android:textStyle="bold"
+                                    android:textSize="17.5sp"
+                                    android:drawablePadding="10dp"
+                                    android:drawableStart="@drawable/baseline_attach_money_24"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                                <CheckBox
+                                    android:id="@+id/cashOnDelivery"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Cash On Delivery"
+                                    android:fontFamily="@font/poppins"
+                                    android:textSize="13.5sp"
+                                    app:layout_constraintTop_toBottomOf="@id/paymentOptionTitle"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                                <CheckBox
+                                    android:id="@+id/GCashPayment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="-15dp"
+                                    android:text="GCash"
+                                    android:fontFamily="@font/poppins"
+                                    android:textSize="13.5sp"
+                                    app:layout_constraintTop_toBottomOf="@id/cashOnDelivery"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                                <CheckBox
+                                    android:id="@+id/BankPayment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-15dp"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Online Bank Payment"
+                                    android:fontFamily="@font/poppins"
+                                    android:textSize="13.5sp"
+                                    app:layout_constraintTop_toBottomOf="@id/GCashPayment"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/deliveryOptionCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="35dp"
+                            app:cardCornerRadius="10dp"
+                            android:background="@drawable/textbox_background"
+                            app:layout_constraintTop_toBottomOf="@id/paymentOptionCard"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/deliveryOptionTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Delivery Option"
+                                    android:textStyle="bold"
+                                    android:textSize="17.5sp"
+                                    android:drawablePadding="10dp"
+                                    android:drawableStart="@drawable/baseline_attach_money_24"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                                <CheckBox
+                                    android:id="@+id/pickUp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:text="In-Store Pick Up"
+                                    android:fontFamily="@font/poppins"
+                                    android:textSize="13.5sp"
+                                    app:layout_constraintTop_toBottomOf="@id/deliveryOptionTitle"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                                <CheckBox
+                                    android:id="@+id/standardShipping"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="-15dp"
+                                    android:text="@string/standard_shipping_j_t"
+                                    android:fontFamily="@font/poppins"
+                                    android:textSize="13.5sp"
+                                    app:layout_constraintTop_toBottomOf="@id/pickUp"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/totalPriceCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="35dp"
+                            app:cardCornerRadius="10dp"
+                            android:background="@drawable/textbox_background"
+                            app:layout_constraintTop_toBottomOf="@id/deliveryOptionCard"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/totalPriceTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Total:"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:drawablePadding="10dp"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"/>
+
+                                <TextView
+                                    android:id="@+id/totalPriceCheckOut"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:text="Php"
+                                    android:textSize="14sp"
+                                    android:drawablePadding="10dp"
+                                    android:fontFamily="@font/poppins"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                            android:id="@+id/checkOutFinishButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginEnd="35dp"
+                            android:text="Check Out"
+                            android:textStyle="bold"
+                            app:spinning_bar_color="@color/white"
+                            app:layout_constraintTop_toBottomOf="@id/totalPriceCard"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

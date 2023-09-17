@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.LoginFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/registerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Sign Up"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/regDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to FarmLink"
+            android:textSize="17.5dp"
+            android:layout_marginTop="-7.5dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registerTitle"/>
+
+        <TextView
+            android:id="@+id/nameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="30dp"
+            android:text="Full Name:"
+            android:textSize="16.5dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintBottom_toTopOf="@id/fullName"
+            app:layout_constraintTop_toBottomOf="@id/regDescription"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/fullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:padding="12dp"
+            android:hint="Enter Full Name"
+            android:maxLines="1"
+            android:background="@drawable/textbox_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameTitle"/>
+
+        <TextView
+            android:id="@+id/emailregTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:text="Email:"
+            android:textSize="16.5dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toBottomOf="@id/fullName"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/regEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:padding="12dp"
+            android:hint="Enter Email"
+            android:maxLines="1"
+            android:background="@drawable/textbox_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailregTitle" />
+
+        <TextView
+            android:id="@+id/passTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:text="Password:"
+            android:textSize="16.5dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toBottomOf="@id/regEmail"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/regPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:padding="12dp"
+            android:hint="Enter Password"
+            android:maxLines="1"
+            android:background="@drawable/textbox_background"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passTitle"/>
+
+        <TextView
+            android:id="@+id/repassTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:text="Re-type Password:"
+            android:textSize="16.5dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toBottomOf="@id/regPassword"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/retypePass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:padding="12dp"
+            android:hint="Confirm Password"
+            android:maxLines="1"
+            android:background="@drawable/textbox_background"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/repassTitle" />
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/regButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginTop="25dp"
+            android:padding="12dp"
+            android:text="Register"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:backgroundTint="@color/base_green"
+            app:spinning_bar_color="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/retypePass"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/googleRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/google_button"
+            android:elevation="16dp"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:text="Sign Up Using Google"
+            android:drawableStart="@drawable/googleg_standard_color_18"
+            android:paddingStart="45dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            app:layout_constraintTop_toBottomOf="@id/regButton"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fbRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/facebook_button"
+            android:elevation="4dp"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="Sign Up Using Facebook"
+            android:drawableStart="@drawable/com_facebook_button_icon"
+            android:paddingStart="45dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/googleRegister" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createAcc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:text="Already have an Account?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/createAcc2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fbRegister" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createAcc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:text="Sign In"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/createAcc1"
+            app:layout_constraintTop_toBottomOf="@id/fbRegister" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

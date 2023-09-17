@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_green"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/titleFarmLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FarmLink"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:textAllCaps="true"
+        android:letterSpacing="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/homeCard"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/card_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleFarmLink">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profileMiniView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:background="@drawable/textbox_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/miniProfile"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@mipmap/profile_mini_round"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/miniName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Full Name"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintStart_toEndOf="@id/miniProfile"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/miniStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Status: Buyer/Seller"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toEndOf="@id/miniProfile"
+                app:layout_constraintTop_toBottomOf="@id/miniName"/>
+
+            <TextView
+                android:id="@+id/miniUserID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="User ID: 4XxinYfOUpheBtwFT1Zs0V30P9o2"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toEndOf="@id/miniProfile"
+                app:layout_constraintTop_toBottomOf="@id/miniStatus"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <GridLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="3"
+            app:layout_constraintTop_toBottomOf="@id/profileMiniView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buyButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:drawableTop="@drawable/buy"
+                android:drawablePadding="5dp"
+                android:textAllCaps="false"
+                android:text="Buy"
+                android:elevation="16dp"
+                android:background="@drawable/bottom_nav_background"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/trackOrderButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:text="Track Order"
+                android:drawableTop="@drawable/track_order"
+                android:drawablePadding="5dp"
+                android:elevation="16dp"
+                android:background="@drawable/bottom_nav_background"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/transactionHistoryButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bottom_nav_background"
+                android:drawableTop="@drawable/transaction"
+                android:drawablePadding="5dp"
+                android:elevation="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="Transaction History"
+                android:textAllCaps="false"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/feedbackButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:background="@drawable/bottom_nav_background"
+                android:drawableTop="@drawable/feedback"
+                android:drawablePadding="5dp"
+                android:elevation="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="Feedback"
+                android:textAllCaps="false"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/forumButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginEnd="10dp"
+                android:textAllCaps="false"
+                android:layout_marginTop="19dp"
+                android:drawableTop="@drawable/baseline_people_24"
+                android:drawablePadding="2dp"
+                android:padding="5dp"
+                android:text="Forum"
+                android:textStyle="bold"
+                android:elevation="16dp"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:background="@drawable/bottom_nav_background"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/aboutUsButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="19dp"
+                android:drawableTop="@drawable/baseline_groups_2_24"
+                android:drawablePadding="2dp"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:text="About Us"
+                android:textStyle="bold"
+                android:elevation="16dp"
+                android:background="@drawable/bottom_nav_background"/>
+        </GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

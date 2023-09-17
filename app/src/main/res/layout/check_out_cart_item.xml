@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/checkOutProductImage"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/checkOutProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Product Name"
+            android:textSize="16.5sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintStart_toEndOf="@id/checkOutProductImage"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/checkOutProductPriceType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Per Kilogram"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintStart_toEndOf="@id/checkOutProductImage"
+            app:layout_constraintTop_toBottomOf="@id/checkOutProductName"/>
+
+        <TextView
+            android:id="@+id/checkOutProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Price"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/base_yellow"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintStart_toEndOf="@id/checkOutProductImage"
+            app:layout_constraintTop_toBottomOf="@id/checkOutProductPriceType"/>
+
+        <TextView
+            android:id="@+id/checkOutQuantityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Item Quantity: "
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toBottomOf="@id/checkOutProductPrice"
+            app:layout_constraintStart_toEndOf="@id/checkOutProductImage"/>
+
+        <TextView
+            android:id="@+id/checkOutItemQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="0"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintStart_toEndOf="@id/checkOutQuantityTitle"
+            app:layout_constraintTop_toBottomOf="@id/checkOutProductPrice"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.LoginFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/loginTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="Log In"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/loginDescription"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/loginDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-7.5dp"
+            android:text="Welcome Back!"
+            android:textSize="17.5dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginTitle"/>
+
+        <TextView
+            android:id="@+id/emailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="45dp"
+            android:text="Email:"
+            android:textSize="16.5dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintBottom_toTopOf="@id/userEmail"
+            app:layout_constraintTop_toBottomOf="@id/loginDescription"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:padding="12dp"
+            android:hint="Enter Email"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/textbox_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailTitle"/>
+
+        <TextView
+            android:id="@+id/passwordTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="45dp"
+            android:text="Password:"
+            android:textSize="16.5dp"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/userEmail"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/userPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:padding="12dp"
+            android:hint="Enter Password"
+            android:background="@drawable/textbox_background"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordTitle"/>
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:padding="12dp"
+            android:text="Log In"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:backgroundTint="@color/base_green"
+            app:spinning_bar_color="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userPassword"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/resetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="65dp"
+            android:text="Forgot Password?"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/googleLogin"
+            app:layout_constraintTop_toBottomOf="@id/loginButton"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/googleLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/google_button"
+            android:elevation="16dp"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:text="Sign In Using Google"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginTop="45dp"
+            android:drawableStart="@drawable/googleg_standard_color_18"
+            android:paddingStart="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/fbLogin"
+            app:layout_constraintTop_toBottomOf="@id/resetPassword"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fbLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/facebook_button"
+            android:drawableStart="@drawable/com_facebook_button_icon"
+            android:elevation="4dp"
+            android:fontFamily="sans-serif"
+            android:paddingStart="45dp"
+            android:text="Log In Using Facebook"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/googleLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="45dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createAcc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:text="Don't have an Account?"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/createAcc2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fbLogin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createAcc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:text="Sign Up"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/createAcc1"
+            app:layout_constraintTop_toBottomOf="@id/fbLogin" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

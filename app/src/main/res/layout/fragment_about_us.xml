@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_green"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/baseline_close_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="true"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/card_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <View
+            android:id="@+id/upperLine"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/aboutTitleName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:text="FarmLink"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/upperLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:text="A Farmers Platform for Sustainable Agriculture through Machine Learning-Powered Digital Marketplace in Pampanga"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintTop_toBottomOf="@id/aboutTitleName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/underLine"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/shopAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <View
+            android:id="@+id/alphaLine"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toTopOf="@id/janeaLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TableLayout
+            android:id="@+id/michaelLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@id/paoloLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/seanLayout">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/michaelProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/profile_mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/michaelName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Caballa, Michael"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins"/>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/janeaLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@id/seanLayout"
+            app:layout_constraintStart_toEndOf="@id/paoloLayout"
+            app:layout_constraintEnd_toStartOf="@id/arnelLayout">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/janeaProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/profile_mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/janeaName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Manaloto, Janea"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins"/>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/justineLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@id/arnelLayout"
+            app:layout_constraintStart_toEndOf="@id/seanLayout"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/justineProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/profile_mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/justineName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Lacson, Justine"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins"/>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/paoloLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/betaLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/seanLayout">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/lozendoProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/profile_mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/paoloName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Lozendo, Paolo"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins"/>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/seanLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/betaLine"
+            app:layout_constraintStart_toEndOf="@id/paoloLayout"
+            app:layout_constraintEnd_toStartOf="@id/arnelLayout">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/estilloreProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/profile_mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/seanName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Estillore, Sean"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins"/>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/arnelLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/betaLine"
+            app:layout_constraintStart_toEndOf="@id/seanLayout"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/davidProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/profile_mini"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/arnelName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="David, Arnel III"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins"/>
+
+        </TableLayout>
+
+        <View
+            android:id="@+id/betaLine"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainmenu_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_feedbackFragment"
+            app:destination="@id/feedbackFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_transactionHistoryFragment"
+            app:destination="@id/transactionHistoryFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_trackOrderFragment"
+            app:destination="@id/trackOrderFragment"
+            app:enterAnim="@anim/from_top" />
+        <action
+            android:id="@+id/action_homeFragment_to_buyFragment"
+            app:destination="@id/buyFragment"
+            app:enterAnim="@anim/from_top"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_forumFragment"
+            app:destination="@id/forumFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_addShippingAddressFragment"
+            app:destination="@id/addShippingAddressFragment"
+            app:enterAnim="@anim/from_top"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/from_top" />
+        <action
+            android:id="@+id/action_profileFragment_to_verificationIntroFragment"
+            app:destination="@id/verificationIntroFragment"
+            app:enterAnim="@anim/from_top" />
+        <action
+            android:id="@+id/action_profileFragment_to_sellerProfileFragment"
+            app:destination="@id/sellerProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_trackOrderFragment"
+            app:destination="@id/trackOrderFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_forumFragment"
+            app:destination="@id/forumFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/buyFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.BuyFragment"
+        android:label="fragment_buy"
+        tools:layout="@layout/fragment_buy" >
+        <action
+            android:id="@+id/action_buyFragment_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:enterAnim="@anim/from_top" />
+        <action
+            android:id="@+id/action_buyFragment_pop"
+            app:popUpTo="@id/buyFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_aboutUsFragment_pop"
+            app:popUpTo="@id/aboutUsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/forumFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.ForumFragment"
+        android:label="fragment_forum"
+        tools:layout="@layout/fragment_forum" >
+        <action
+            android:id="@+id/action_forumFragment_to_forumPostViewFragment"
+            app:destination="@id/forumPostViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackOrderFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.TrackOrderFragment"
+        android:label="fragment_track_order"
+        tools:layout="@layout/fragment_track_order" >
+        <action
+            android:id="@+id/action_trackOrderFragment_to_trackOrderProductFragment"
+            app:destination="@id/trackOrderProductFragment"
+            app:enterAnim="@anim/from_top" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.TransactionHistoryFragment"
+        android:label="fragment_transaction_history"
+        tools:layout="@layout/fragment_transaction_history" >
+        <action
+            android:id="@+id/action_transactionHistoryFragment_pop"
+            app:popUpTo="@id/transactionHistoryFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.FeedbackFragment"
+        android:label="fragment_feedback"
+        tools:layout="@layout/fragment_feedback" >
+        <action
+            android:id="@+id/action_feedbackFragment_pop"
+            app:popUpTo="@id/feedbackFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.MessageFragment"
+        android:label="MessageFragment"
+        tools:layout="@layout/fragment_message">
+        <action
+            android:id="@+id/action_messageFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/from_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.buyfragment_productshopping.product_details.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <argument
+            android:name="product"
+            app:argType="com.example.farmlinkapp.data.Product" />
+        <action
+            android:id="@+id/action_productDetailsFragment_pop"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/productDetailsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_directCheckOutFragment"
+            app:destination="@id/directCheckOutFragment" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_checkOutDirectActivity"
+            app:destination="@id/checkOutDirectActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/from_top" />
+        <action
+            android:id="@+id/action_cartFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment"
+            app:enterAnim="@anim/from_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/addShippingAddressFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.AddShippingAddressFragment"
+        android:label="fragment_add_shipping_address"
+        tools:layout="@layout/fragment_add_shipping_address" >
+        <action
+            android:id="@+id/action_addShippingAddressFragment_pop"
+            app:popUpTo="@id/addShippingAddressFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.CheckOutFragment"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOutFragment_pop"
+            app:popUpTo="@id/checkOutFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="totalPrice"
+            app:argType="float" />
+        <argument
+            android:name="products"
+            app:argType="com.example.farmlinkapp.data.CartProduct[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_pop"
+            app:popUpTo="@id/editProfileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackOrderProductFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.buyfragment_productshopping.product_details.TrackOrderProductFragment"
+        android:label="TrackOrderProductFragment"
+        tools:layout="@layout/fragment_track_order_product">
+        <argument
+            android:name="order"
+            app:argType="com.example.farmlinkapp.data.order.Order" />
+        <action
+            android:id="@+id/action_trackOrderProductFragment_pop"
+            app:popUpTo="@id/trackOrderProductFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chatFragment_pop"
+            app:popUpTo="@id/chatFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.buyfragment_productshopping.ProductListFragment"
+        android:label="ProductListFragment"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/from_top" />
+        <action
+            android:id="@+id/action_productListFragment_pop"
+            app:popUpTo="@id/productListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationIntroFragment"
+        android:name="com.example.farmlinkapp.farmer_verification.VerificationIntroFragment"
+        android:label="fragment_verification_intro"
+        tools:layout="@layout/fragment_verification_intro" >
+        <action
+            android:id="@+id/action_verificationIntroFragment_pop"
+            app:popUpTo="@id/verificationIntroFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_verificationIntroFragment_to_verificationFarmerFragment"
+            app:destination="@id/verificationFarmerFragment"
+            app:enterAnim="@anim/from_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationFarmerFragment"
+        android:name="com.example.farmlinkapp.farmer_verification.VerificationFarmerFragment"
+        android:label="VerificationFarmerFragment"
+        tools:layout="@layout/fragment_verification_farmer">
+        <action
+            android:id="@+id/action_verificationFarmerFragment_pop"
+            app:popUpTo="@id/verificationFarmerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_verificationFarmerFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellerProfileFragment"
+        android:name="com.example.farmlinkapp.seller_fragments.SellerProfileFragment"
+        android:label="SellerProfileFragment"
+        tools:layout="@layout/fragment_seller_profile">
+        <action
+            android:id="@+id/action_sellerProfileFragment_pop"
+            app:popUpTo="@id/sellerProfileFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_addProductActivity"
+            app:destination="@id/addProductActivity" />
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_analyticsAndReportFragment"
+            app:destination="@id/analyticsAndReportFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/addProductActivity"
+        android:name="com.example.farmlinkapp.activities.AddProductActivity"
+        android:label="activity_add_product"
+        tools:layout="@layout/activity_add_product" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.NotificationsFragment"
+        android:label="NotificationsFragment"
+        tools:layout="@layout/fragment_notifications">
+        <action
+            android:id="@+id/action_notificationsFragment_pop"
+            app:popUpTo="@id/notificationsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/forumPostViewFragment"
+        android:name="com.example.farmlinkapp.fragments.mainmenufrags.forum_utils.ForumPostViewFragment"
+        android:label="ForumPostViewFragment"
+        tools:layout="@layout/fragment_forum_post_view">
+        <action
+            android:id="@+id/action_forumPostViewFragment_pop"
+            app:popUpTo="@id/forumPostViewFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/directCheckOutFragment"
+        android:name="com.example.farmlinkapp.fragments.home_buttonfragments.buyfragment_productshopping.product_details.DirectCheckOutFragment"
+        android:label="DirectCheckOutFragment"
+        tools:layout="@layout/fragment_direct_check_out">
+        <action
+            android:id="@+id/action_directCheckOutFragment_pop"
+            app:popUpTo="@id/directCheckOutFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/getQuantityDialog"
+        android:name="com.example.farmlinkapp.dialog.GetQuantityDialog"
+        android:label="GetQuantityDialog"
+        tools:layout="@layout/get_price_dialog">
+        <action
+            android:id="@+id/action_getQuantityDialog_to_directCheckOutFragment"
+            app:destination="@id/directCheckOutFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/analyticsAndReportFragment"
+        android:name="com.example.farmlinkapp.seller_fragments.AnalyticsAndReportFragment"
+        android:label="AnalyticsAndReportFragment"
+        tools:layout="@layout/fragment_analytics_and_report">
+        <action
+            android:id="@+id/action_analyticsAndReportFragment_pop"
+            app:popUpTo="@id/analyticsAndReportFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/checkOutDirectActivity"
+        android:name="com.example.farmlinkapp.activities.CheckOutDirectActivity"
+        android:label="activity_check_out_direct"
+        tools:layout="@layout/activity_check_out_direct" />
+
+</navigation>

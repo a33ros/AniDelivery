@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddProductActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/base_green">
+
+        <GridLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/backCropsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/baseline_arrow_left_24white"/>
+
+            <TextView
+                android:id="@+id/titleCrops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:text="post a product"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </GridLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/card_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/categoryTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Category"
+                            android:textSize="16.5sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:id="@+id/productDropdown"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginEnd="35dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/categoryTitle"
+                            tools:ignore="TouchTargetSizeCheck">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/productCategory"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:inputType="none"
+                                android:text="Choose A Product Type"
+                                android:fontFamily="@font/poppins"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/itemNameTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Product"
+                            android:textSize="16.5sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"
+                            app:layout_constraintTop_toBottomOf="@id/productDropdown"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/productName"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginEnd="35dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/itemNameTitle">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/productNameSelection"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:inputType="none"
+                                android:text="Choose Product Name"
+                                android:fontFamily="@font/poppins"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/itemDescriptionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Product Description"
+                            android:textSize="16.5sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"
+                            app:layout_constraintTop_toBottomOf="@id/productName"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/itemDescriptionTextBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginEnd="35dp"
+                            android:background="@drawable/textbox_background"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Enter Item Description"
+                            android:padding="7dp"
+                            android:imeOptions="actionDone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/itemDescriptionTitle"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/itemQuantityTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Product Quantity"
+                            android:textSize="16.5sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"
+                            app:layout_constraintTop_toBottomOf="@id/itemDescriptionTextBox"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/itemQuantityTextBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginEnd="35dp"
+                            android:background="@drawable/textbox_background"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Enter Item Quantity"
+                            android:inputType="numberDecimal"
+                            android:padding="7dp"
+                            android:imeOptions="actionDone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/itemQuantityTitle"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/itemAddPriceTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Product Price per Kilogram"
+                            android:textSize="16.5sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"
+                            app:layout_constraintTop_toBottomOf="@id/itemQuantityTextBox"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/itemAddPriceTextBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginEnd="35dp"
+                            android:background="@drawable/textbox_background"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Enter Price per Kilogram"
+                            android:inputType="numberDecimal"
+                            android:padding="7dp"
+                            android:imeOptions="actionDone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/itemAddPriceTitle"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <GridLayout
+                            android:id="@+id/addProductImageLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="45dp"
+                            android:layout_marginEnd="45dp"
+                            android:columnCount="4"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@id/itemAddPriceTextBox"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/addProductImageButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/textbox_background"
+                                android:paddingStart="50dp"
+                                android:paddingEnd="0dp"
+                                android:drawablePadding="-50dp"
+                                android:text="Add Image"
+                                android:fontFamily="@font/poppins"
+                                android:textAllCaps="false"
+                                android:layout_columnWeight="3"
+                                android:drawableStart="@drawable/baseline_add_photo_alternate_24" />
+
+                            <TextView
+                                android:id="@+id/selectedImagesNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_bold"
+                                android:gravity="center"
+                                android:textSize="17.5sp"
+                                android:layout_columnWeight="1"/>
+
+
+                        </GridLayout>
+
+                        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                            android:id="@+id/postProductButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginEnd="35dp"
+                            android:background="@drawable/product_type_buttons"
+                            android:text="Post Product"
+                            android:fontFamily="@font/poppins"
+                            android:textStyle="bold"
+                            android:textAllCaps="false"
+                            app:spinning_bar_color="@color/white"
+                            app:layout_constraintTop_toBottomOf="@id/addProductImageLayout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
