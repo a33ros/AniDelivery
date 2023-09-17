@@ -24,7 +24,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA-g0Fu1wVg_NIOA1kO0twjdznmXjfpYjY" />
+            android:value="=====" />
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
